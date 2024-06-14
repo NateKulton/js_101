@@ -12,7 +12,7 @@ function prompt(msg) {
 
 function invalidNumber(num) {
   return num.trimStart() === '' || Number.isNaN(Number(num));
-  }
+}
 
 prompt("Welcome to the Calculator!");
 
@@ -47,13 +47,13 @@ switch (operation) {
     output = Number(firstNumber) + Number(secondNumber);
     break;
   case '2':
-    output = output = Number(firstNumber) - Number(secondNumber);
+    output = Number(firstNumber) - Number(secondNumber);
     break;
   case '3':
-    output = output = Number(firstNumber) * Number(secondNumber);
+    output = Number(firstNumber) * Number(secondNumber);
     break;
   case '4':
-    output = output = Number(firstNumber) / Number(secondNumber);
+    output = Number(firstNumber) / Number(secondNumber);
     break;
 }
 
