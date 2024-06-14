@@ -6,28 +6,55 @@
 
 const readline = require('readline-sync');
 
-console.log("Welcome to the Calculator!");
-
-console.log("What is the first number?");
-let firstNumber = readline.question();
-
-console.log("What is the second number?");
-let secondNumber = readline.question();
-
-console.log(`${firstNumber} ${secondNumber}`);
-
-console.log("What is the operation would you like to perform\n1) Add 2) Subtract 3) Multiply 4) Divide?");
-let operation = readline.question();
-
-let output;
-if (operation === '1') {
-  output = Number(firstNumber) + Number(secondNumber);
-} else if (operation === '2') {
-  output = output = Number(firstNumber) - Number(secondNumber);
-} else if (operation === '3') {
-  output = output = Number(firstNumber) * Number(secondNumber);
-} else if (operation === '4'){
-  output = output = Number(firstNumber) / Number(secondNumber);
+function prompt(msg) {
+  console.log(`=> ${msg}`);
 }
 
-console.log(`The result is ${output}`);
+function invalidNumber(num) {
+  return num.trimStart() === '' || Number.isNaN(Number(num));
+  }
+
+prompt("Welcome to the Calculator!");
+
+prompt("What is the first number?");
+let firstNumber = readline.question();
+
+while (invalidNumber(firstNumber)) {
+  prompt('Sorry, that was an invalid number. Learn your lesson next time.');
+  firstNumber = readline.question();
+}
+
+prompt("What is the second number?");
+let secondNumber = readline.question();
+
+while (invalidNumber(secondNumber)) {
+  prompt('Sorry, that was an invalid number. Learn your lesson next time.');
+  secondNumber = readline.question();
+}
+
+prompt("What is the operation would you like to perform\n1) Add 2) Subtract 3) Multiply 4) Divide?");
+let operation = readline.question();
+
+while (!['1', '2', '3', '4'].includes(operation)) {
+  prompt('You must choose 1, 2, 3, or 4!');
+  operation = readline.question();
+}
+
+let output;
+
+switch (operation) {
+  case '1':
+    output = Number(firstNumber) + Number(secondNumber);
+    break;
+  case '2':
+    output = output = Number(firstNumber) - Number(secondNumber);
+    break;
+  case '3':
+    output = output = Number(firstNumber) * Number(secondNumber);
+    break;
+  case '4':
+    output = output = Number(firstNumber) / Number(secondNumber);
+    break;
+}
+
+prompt(`The result is ${output}`);
