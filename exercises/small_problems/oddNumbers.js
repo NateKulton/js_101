@@ -1,4 +1,5 @@
-// LS: Log all odd numbers from 1 to 99, inclusive, to the console, with each number on a separate line
+// LS: Log all odd numbers from 1 to 99, inclusive,
+// to the console, with each number on a separate line
 
 // Log all numbers to the console from 1 to 99. Including 1 and 99 in that
 // Log them all on differnt lines
@@ -12,12 +13,13 @@
 // iterator + 1
 // end
 
- // I tried setting i as 0 at fisrt, but it reminded me that I log i before I increment it.
- // So I have to set it to 1 instead
+// I tried setting i as 0 at fisrt, but...
+// it reminded me that I log i before I increment it.
+// So I have to set it to 1 instead
 
-let i = 1;
+let index = 1;
 
-while (i < 100) {
-  console.log(i);
-  i += 1;
+while (index <= 99) {
+  console.log(index);
+  index += 2;
 }
