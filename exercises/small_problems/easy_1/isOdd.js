@@ -8,7 +8,6 @@ function isOdd(num) {
 }
 
 
-
 // These are the test cases
 console.log(isOdd(2)); // => false
 console.log(isOdd(5)); // => true
