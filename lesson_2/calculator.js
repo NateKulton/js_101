@@ -6,6 +6,10 @@
 
 const readline = require('readline-sync');
 
+let doAgain;
+
+do {
+
 function prompt(msg) {
   console.log(`=> ${msg}`);
 }
@@ -58,3 +62,9 @@ switch (operation) {
 }
 
 prompt(`The result is ${output}`);
+
+prompt(`Would you like to do more math? (yes/no)`);
+let timesToDo = readline.question();
+doAgain = timesToDo.trimStart().toLowerCase();
+
+} while (doAgain === 'yes')
