@@ -5,6 +5,7 @@
 // display the rssult of the operation
 
 const readline = require('readline-sync');
+const jsonMessages = require('./calculator_messages.json')
 
 let doAgain;
 
@@ -18,29 +19,29 @@ function invalidNumber(num) {
   return num.trimStart() === '' || Number.isNaN(Number(num));
 }
 
-prompt("Welcome to the Calculator!");
+prompt(jsonMessages['welcome']);
 
-prompt("What is the first number?");
+prompt(jsonMessages['num1']);
 let firstNumber = readline.question();
 
 while (invalidNumber(firstNumber)) {
-  prompt('Sorry, that was an invalid number. Learn your lesson next time.');
+  prompt(jsonMessages['invalidInput']);
   firstNumber = readline.question();
 }
 
-prompt("What is the second number?");
+prompt(jsonMessages['num2']);
 let secondNumber = readline.question();
 
 while (invalidNumber(secondNumber)) {
-  prompt('Sorry, that was an invalid number. Learn your lesson next time.');
+  prompt(jsonMessages['invalidInput']);
   secondNumber = readline.question();
 }
 
-prompt("What is the operation would you like to perform\n1) Add 2) Subtract 3) Multiply 4) Divide?");
+prompt(jsonMessages['mathOps']);
 let operation = readline.question();
 
 while (!['1', '2', '3', '4'].includes(operation)) {
-  prompt('You must choose 1, 2, 3, or 4!');
+  prompt(jsonMessages['mathWarning']);
   operation = readline.question();
 }
 
@@ -61,9 +62,9 @@ switch (operation) {
     break;
 }
 
-prompt(`The result is ${output}`);
+prompt(jsonMessages['result'] + `${output}`);
 
-prompt(`Would you like to do more math? (yes/no)`);
+prompt(jsonMessages['doMore']);
 let timesToDo = readline.question();
 doAgain = timesToDo.trimStart().toLowerCase();
 

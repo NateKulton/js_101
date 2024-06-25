@@ -1,0 +1,10 @@
+{
+    "welcome" : "Welcome to the Calculator!",
+    "num1" : "What is the first number?",
+    "num2" : "What is the second number?",
+    "invalidInput" : "Sorry, that was an invalid number. Learn your lesson next time.",
+    "mathOps" : "What is the operation would you like to perform\n1) Add 2) Subtract 3) Multiply 4) Divide?",
+    "mathWarning" : "You must choose 1, 2, 3, or 4!",
+    "result" : "The result is ",
+    "doMore" : "Is it a yes for doing more math for you?"
+}
