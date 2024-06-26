@@ -4,8 +4,10 @@
 // perform the operation
 // display the rssult of the operation
 
+const LANGUAGE = 'en';
 const readline = require('readline-sync');
-const jsonMessages = require('./calculator_messages.json')
+const JSON_MESSAGES = require('./calculator_messages.json')
+
 
 let doAgain;
 
@@ -15,33 +17,37 @@ function prompt(msg) {
   console.log(`=> ${msg}`);
 }
 
+function messages(message, lang='en') {
+  return JSON_MESSAGES[lang][message];
+}
+
 function invalidNumber(num) {
   return num.trimStart() === '' || Number.isNaN(Number(num));
 }
 
-prompt(jsonMessages['welcome']);
+prompt(messages('welcome', LANGUAGE));
 
-prompt(jsonMessages['num1']);
+prompt(messages('num1', LANGUAGE));
 let firstNumber = readline.question();
 
 while (invalidNumber(firstNumber)) {
-  prompt(jsonMessages['invalidInput']);
+  prompt(messages('invalidInput', LANGUAGE));
   firstNumber = readline.question();
 }
 
-prompt(jsonMessages['num2']);
+prompt(messages('num2', LANGUAGE));
 let secondNumber = readline.question();
 
 while (invalidNumber(secondNumber)) {
-  prompt(jsonMessages['invalidInput']);
+  prompt(messages('invalidInput', LANGUAGE));
   secondNumber = readline.question();
 }
 
-prompt(jsonMessages['mathOps']);
+prompt(messages('mathOps', LANGUAGE));
 let operation = readline.question();
 
 while (!['1', '2', '3', '4'].includes(operation)) {
-  prompt(jsonMessages['mathWarning']);
+  prompt(messages('mathWarning', LANGUAGE));
   operation = readline.question();
 }
 
@@ -62,9 +68,9 @@ switch (operation) {
     break;
 }
 
-prompt(jsonMessages['result'] + `${output}`);
+prompt(messages('result', LANGUAGE) + `${output}`);
 
-prompt(jsonMessages['doMore']);
+prompt(messages('doMore', LANGUAGE));
 let timesToDo = readline.question();
 doAgain = timesToDo.trimStart().toLowerCase();
 

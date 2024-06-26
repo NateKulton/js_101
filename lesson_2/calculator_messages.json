@@ -1,4 +1,6 @@
 {
+  "langCheck" : "English or Spanish? (en/es)",
+  "en" : {
     "welcome" : "Welcome to the Calculator!",
     "num1" : "What is the first number?",
     "num2" : "What is the second number?",
@@ -6,5 +8,17 @@
     "mathOps" : "What is the operation would you like to perform\n1) Add 2) Subtract 3) Multiply 4) Divide?",
     "mathWarning" : "You must choose 1, 2, 3, or 4!",
     "result" : "The result is ",
-    "doMore" : "Is it a yes for doing more math for you?"
+    "doMore" : "Is it a yes for doing more math for you? (yes)"
+  },
+
+  "es" : {
+    "welcome" : "¡Bienvenido a la calculadora!",
+    "num1" : "¿Cuál es el primer número?",
+    "num2" : "¿Cuál es el segundo número?",
+    "invalidInput" : "Lo siento, ese era un número no válido.",
+    "mathOps" : "¿Cuál es la operación que te gustaría realizar\n1) Sumar 2) Restar 3) Multiplicar 4) Dividir?",
+    "mathWarning" : "¡Debes elegir 1, 2, 3 o 4!",
+    "result" : "El resultado es ",
+    "doMore" : "¿Es un sí por hacer más matemáticas para ti? (yes)"
+  }
 }
