@@ -11,7 +11,7 @@
 
 const LANGUAGE = 'en';
 const readline = require('readline-sync');
-const JSON_MESSAGES = require('./calculator_messages.json')
+const JSON_MESSAGES = require('./calculator_messages.json');
 
 let doAgain;
 
@@ -20,7 +20,7 @@ do {
     console.log(`=> ${msg}`);
   }
 
-  function messages(message, lang='en') {
+  function messages(message, lang = 'en') {
     return JSON_MESSAGES[lang][message];
   }
 
@@ -76,4 +76,4 @@ do {
   prompt(messages('doMore', LANGUAGE));
   let timesToDo = readline.question();
   doAgain = timesToDo.trimStart().toLowerCase();
-} while (doAgain === 'yes')
+} while (doAgain === 'yes');
