@@ -20,6 +20,10 @@ do {
     console.log(`=> ${msg}`);
   }
 
+function clearTerm() {
+  console.clear();
+}
+
   function messages(message, lang = 'en') {
     return JSON_MESSAGES[lang][message];
   }
@@ -34,6 +38,7 @@ do {
   let firstNumber = readline.question();
 
   while (invalidNumber(firstNumber)) {
+    clearTerm();
     prompt(messages('invalidInput', LANGUAGE));
     firstNumber = readline.question();
   }
@@ -42,6 +47,7 @@ do {
   let secondNumber = readline.question();
 
   while (invalidNumber(secondNumber)) {
+    clearTerm();
     prompt(messages('invalidInput', LANGUAGE));
     secondNumber = readline.question();
   }
@@ -76,4 +82,5 @@ do {
   prompt(messages('doMore', LANGUAGE));
   let timesToDo = readline.question();
   stopMathLoop = timesToDo.trimStart().toLowerCase();
+  clearTerm();
 } while (stopMathLoop !== 'y');
