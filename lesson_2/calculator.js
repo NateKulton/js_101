@@ -15,23 +15,23 @@ const JSON_MESSAGES = require('./calculator_messages.json');
 
 let stopMathLoop;
 
-do {
-  function prompt(msg) {
-    console.log(`=> ${msg}`);
-  }
+
+function prompt(msg) {
+  console.log(`=> ${msg}`);
+}
 
 function clearTerm() {
   console.clear();
 }
 
-  function messages(message, lang = 'en') {
-    return JSON_MESSAGES[lang][message];
-  }
+function messages(message, lang = 'en') {
+  return JSON_MESSAGES[lang][message];
+}
 
-  function invalidNumber(num) {
-    return num.trimStart() === '' || Number.isNaN(Number(num));
-  }
-
+function invalidNumber(num) {
+  return num.trimStart() === '' || Number.isNaN(Number(num));
+}
+do {
   prompt(messages('welcome', LANGUAGE));
 
   prompt(messages('num1', LANGUAGE));

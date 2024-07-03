@@ -19,6 +19,6 @@
     "mathOps" : "¿Cuál es la operación que te gustaría realizar\n1) Sumar 2) Restar 3) Multiplicar 4) Dividir?",
     "mathWarning" : "¡Debes elegir 1, 2, 3 o 4!",
     "result" : "El resultado es ",
-    "doMore" : "¿Es un sí por hacer más matemáticas para ti? (yes)"
+    "doMore" : "¿Quieres dejar de hacer matemáticas? (y/n)"
   }
 }
