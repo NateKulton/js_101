@@ -13,7 +13,7 @@ const LANGUAGE = 'en';
 const readline = require('readline-sync');
 const JSON_MESSAGES = require('./calculator_messages.json');
 
-let doAgain;
+let stopMathLoop;
 
 do {
   function prompt(msg) {
@@ -75,5 +75,5 @@ do {
 
   prompt(messages('doMore', LANGUAGE));
   let timesToDo = readline.question();
-  doAgain = timesToDo.trimStart().toLowerCase();
-} while (doAgain === 'yes');
+  stopMathLoop = timesToDo.trimStart().toLowerCase();
+} while (stopMathLoop !== 'y');

@@ -8,7 +8,7 @@
     "mathOps" : "What is the operation would you like to perform\n1) Add 2) Subtract 3) Multiply 4) Divide?",
     "mathWarning" : "You must choose 1, 2, 3, or 4!",
     "result" : "The result is ",
-    "doMore" : "Is it a yes for doing more math for you? (yes)"
+    "doMore" : "Do you want to stop doing math? (y/n)"
   },
 
   "es" : {
