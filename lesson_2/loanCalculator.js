@@ -10,4 +10,4 @@ function loanCalc(loanA, rate, loanD) {
   return pay;
 }
 
-console.log(loanCalc(10000, 0.10, 2));
+console.log(loanCalc(10000, 0.06, 12));
