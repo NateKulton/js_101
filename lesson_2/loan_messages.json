@@ -3,7 +3,6 @@
   "loanAmount" : "What is your loan amount?",
   "APR" : "What is your APR?",
   "monthOrYear" : "Is your loan term in months or years? (m/y)",
-  "loanDurationM" : "How many months is your term?",
-  "loanDurationY" : "How many years is your term?",
+  "loanDuration" : "How long is your loan term?",
   "monthlyBill" : "Your monthly bill is "
  }
