@@ -2,7 +2,8 @@
   "welcome" : "Welcome to the Loan Calculator!",
   "loanAmount" : "What is your loan amount?",
   "APR" : "What is your APR?",
-  "monthOrYear" : "Is your loan term in months or years? (m/y)",
+  "monthYear" : "Is your loan term in months or years? (m/y)",
   "loanDuration" : "How long is your loan term?",
-  "monthlyBill" : "Your monthly bill is "
+  "monthlyBill" : "Your monthly bill is ",
+  "wrongInput" : "YOU HAVE TO INPUT m OR y (FOR MONTH OR YEAR)!"
  }

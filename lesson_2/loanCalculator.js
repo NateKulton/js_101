@@ -9,6 +9,10 @@ function prompt(msg) {
   console.log(`-> ${msg}`);
 }
 
+function clearWindow() {
+  console.clear();
+}
+
 prompt(FILE_MESSAGES['welcome']);
 
 prompt(FILE_MESSAGES['loanAmount']);
@@ -17,8 +21,19 @@ let loanAmount = readline.question();
 prompt(FILE_MESSAGES['APR']);
 let apr = readline.question();
 
-prompt(FILE_MESSAGES['monthOrYear']);
+prompt(FILE_MESSAGES['monthYear']);
 let monthOrYear = readline.question();
+
+function notTheLetters(letter) {
+  let letterCheck = letter.trimStart().toLowerCase();
+  return !(letterCheck === 'm' || letterCheck === 'y');
+}
+
+while (notTheLetters(monthOrYear)) {
+  clearWindow();
+  prompt(FILE_MESSAGES['wrongInput']);
+  monthOrYear = readline.question();
+}
 
 prompt(FILE_MESSAGES['loanDuration']);
 let loanTerm = readline.question();
@@ -28,19 +43,20 @@ if (monthOrYear === 'y') {
 } else if (monthOrYear === 'm') {
   loanM(loanAmount, apr, loanTerm);
 } else {
-  console.log(`YOU DIDN'T TYPE m OR y!`);
-  // invoke a while loop in here if the user doesn't input m or y
+  console.log('IT seems like one of your inputs was invalid, oops');
 }
 
 function loanY(loanA, rate, loanD) {
   loanD *= 12;
+  rate /= 100;
   let pay = Number(loanA) * ((Number(rate) / 12) / (1 - Math.pow((1 + (Number(rate) / 12)), (Number(-loanD)))));
-  prompt(pay);
+  prompt(pay.toFixed(2));
 }
 
 
 function loanM(loanA, rate, loanD) {
+  rate /= 100;
   let pay = Number(loanA) * ((Number(rate) / 12) / (1 - Math.pow((1 + (Number(rate) / 12)), (Number(-loanD)))));
-  prompt(pay);
+  prompt(pay.toFixed(2));
 }
 

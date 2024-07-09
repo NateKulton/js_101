@@ -15,3 +15,5 @@ The program needs to:
 
 6) make a function to make the messages that come to the console a little nicer looking like in my other calculator
 
+Now, it is time to make sure I get valid inputs. First I will maker sure I get m or y because this is
+a letter input and not a number I want to do it first. Because the others maybe able to be reused more than this one
