@@ -17,3 +17,7 @@ The program needs to:
 
 Now, it is time to make sure I get valid inputs. First I will maker sure I get m or y because this is
 a letter input and not a number I want to do it first. Because the others maybe able to be reused more than this one
+
+I made it so that you put in percent instead of a decimal number
+I'm still working on the input for month or year
+

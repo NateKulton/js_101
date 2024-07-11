@@ -13,13 +13,33 @@ function clearWindow() {
   console.clear();
 }
 
+function invalidNum(number) {
+  return number.trim() === '' ||
+         Number(number) < 0   ||
+         Number.isNaN(Number(number));
+}
+
 prompt(FILE_MESSAGES['welcome']);
 
 prompt(FILE_MESSAGES['loanAmount']);
 let loanAmount = readline.question();
 
+while (invalidNum(loanAmount)) {
+  clearWindow();
+  prompt(FILE_MESSAGES['numberNeeded']);
+  prompt(FILE_MESSAGES['loanAmount']);
+  loanAmount = readline.question();
+}
+
 prompt(FILE_MESSAGES['APR']);
 let apr = readline.question();
+
+while (invalidNum(apr)) {
+  clearWindow();
+  prompt(FILE_MESSAGES['numberNeeded']);
+  prompt(FILE_MESSAGES['APR']);
+  apr = readline.question();
+}
 
 prompt(FILE_MESSAGES['monthYear']);
 let monthOrYear = readline.question();
@@ -32,18 +52,26 @@ function notTheLetters(letter) {
 while (notTheLetters(monthOrYear)) {
   clearWindow();
   prompt(FILE_MESSAGES['wrongInput']);
+  prompt(FILE_MESSAGES['monthYear']);
   monthOrYear = readline.question();
 }
 
 prompt(FILE_MESSAGES['loanDuration']);
 let loanTerm = readline.question();
 
+while (invalidNum(loanTerm)) {
+  clearWindow();
+  prompt(FILE_MESSAGES['numberNeeded']);
+  prompt(FILE_MESSAGES['loanDuration']);
+  loanTerm = readline.question();
+}
+
 if (monthOrYear === 'y') {
   loanY(loanAmount, apr, loanTerm);
 } else if (monthOrYear === 'm') {
   loanM(loanAmount, apr, loanTerm);
 } else {
-  console.log('IT seems like one of your inputs was invalid, oops');
+  prompt('IT seems like one of your inputs was invalid, oops!');
 }
 
 function loanY(loanA, rate, loanD) {

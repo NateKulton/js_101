@@ -5,5 +5,6 @@
   "monthYear" : "Is your loan term in months or years? (m/y)",
   "loanDuration" : "How long is your loan term?",
   "monthlyBill" : "Your monthly bill is ",
-  "wrongInput" : "YOU HAVE TO INPUT m OR y (FOR MONTH OR YEAR)!"
+  "wrongInput" : "YOU HAVE TO INPUT m OR y (FOR MONTH OR YEAR)!",
+  "numberNeeded" : "YOU MUST ENTER A NUMBER!"
  }
