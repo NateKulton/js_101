@@ -66,9 +66,9 @@ while (invalidNum(loanTerm)) {
   loanTerm = readline.question();
 }
 
-if (monthOrYear === 'y') {
+if (monthOrYear.toLowerCase() === 'y') {
   loanY(loanAmount, apr, loanTerm);
-} else if (monthOrYear === 'm') {
+} else if (monthOrYear.toLowerCase() === 'm') {
   loanM(loanAmount, apr, loanTerm);
 } else {
   prompt('IT seems like one of your inputs was invalid, oops!');
@@ -87,4 +87,3 @@ function loanM(loanA, rate, loanD) {
   let pay = Number(loanA) * ((Number(rate) / 12) / (1 - Math.pow((1 + (Number(rate) / 12)), (Number(-loanD)))));
   prompt(pay.toFixed(2));
 }
-
