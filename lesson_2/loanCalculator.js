@@ -15,7 +15,7 @@ function clearWindow() {
 
 function invalidNum(number) {
   return number.trim() === '' ||
-         Number(number) < 0   ||
+         Number(number) <= 0   ||
          Number.isNaN(Number(number));
 }
 
