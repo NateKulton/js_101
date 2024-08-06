@@ -17,11 +17,11 @@ let doMath = 'MATH ON!';
 
 switch (doMath) {
   case 'MATH ON!':
-    prompt( `${numOne} + ${numTwo} = ` + (numOne + numTwo));
-    prompt( `${numOne} - ${numTwo} = ` + (numOne - numTwo));
-    prompt( `${numOne} * ${numTwo} = ` + (numOne * numTwo));
-    prompt( `${numOne} / ${numTwo} = ` + (numOne / numTwo));
-    prompt( `${numOne} % ${numTwo} = ` + (numOne % numTwo));
-    prompt( `${numOne} ** ${numTwo} = ` + (numOne ** numTwo));
+    prompt(`${numOne} + ${numTwo} = ${numOne + numTwo}`);
+    prompt(`${numOne} - ${numTwo} = ${numOne - numTwo}`);
+    prompt( `${numOne} * ${numTwo} = ${numOne * numTwo}`);
+    prompt( `${numOne} / ${numTwo} = ${Math.round(numOne / numTwo)}`);
+    prompt( `${numOne} % ${numTwo} = ${numOne % numTwo}`);
+    prompt( `${numOne} ** ${numTwo} = ${numOne ** numTwo}`);
 }
 
