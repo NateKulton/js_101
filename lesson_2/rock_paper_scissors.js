@@ -23,7 +23,7 @@ function displayWinner(userChoice, computerChoice) {
       (userChoice === 'lizard' && computerChoice === 'spock') ||
       (userChoice === 'spock' && computerChoice === 'scissors') ||
       (userChoice === 'spock' && computerChoice === 'rock')) {
-    prompt("You Won using!");
+    prompt("You won!");
   } else if ((userChoice === 'rock' && userChoice === 'scissors') ||
       (computerChoice === 'rock' && userChoice === 'lizard') ||
       (computerChoice === 'paper' && userChoice === 'rock') ||
@@ -34,7 +34,7 @@ function displayWinner(userChoice, computerChoice) {
       (computerChoice === 'lizard' && userChoice === 'spock') ||
       (computerChoice === 'spock' && userChoice === 'scissors') ||
       (computerChoice === 'spock' && userChoice === 'rock')) {
-    prompt("The computer wins!");
+    prompt("The computer won!");
   } else {
     prompt("It looks like a tie!");
   }
@@ -42,7 +42,20 @@ function displayWinner(userChoice, computerChoice) {
 
 do {
   prompt(`Choose one: ${VALID_CHOICES.join(', ')}`);
+  prompt("Note: shorthand is 'r', 'p', 'sc', 'l', and 'sp' respectively");
   let userChoice = reformattedUserInput();
+
+  if (userChoice === 'r') {
+    userChoice = 'rock';
+  } else if (userChoice === 'p') {
+    userChoice = 'paper';
+  } else if (userChoice === 'sc') {
+    userChoice = 'scissors';
+  } else if (userChoice === 'l') {
+    userChoice = 'lizard';
+  } else if (userChoice === 'sp') {
+    userChoice = 'spock';
+  }
 
   while (!VALID_CHOICES.includes(userChoice)) {
     prompt(`That's not a valid choice. Valid choices are: ${VALID_CHOICES.join(', ')}`);
