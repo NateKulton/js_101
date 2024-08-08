@@ -3,6 +3,8 @@ const VALID_CHOICES = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
 let anotherRound;
 let userWins = 0;
 let computerWins = 0;
+let grandChamp = 3;
+
 
 function prompt(msg) {
   console.log(`=> ${msg}`);
@@ -85,10 +87,10 @@ do {
     computerWins += 1;
   }
 
-  if (userWins === 3) {
+  if (userWins === grandChamp) {
     prompt('YOU ARE THE GRAND CHAMPION!');
     break;
-  } else if (computerWins === 3) {
+  } else if (computerWins === grandChamp) {
     prompt('THE COMPUTER IS THE GRAND CHAMPION!');
     break;
   }
