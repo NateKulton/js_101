@@ -35,7 +35,6 @@ function shortHand(userChoice) {
   }
 }
 
-
 function userWinCondition(userChoice, computerChoice) {
   prompt(`You chose ${userChoice}. Computer chose ${computerChoice}.`);
 
