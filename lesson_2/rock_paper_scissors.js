@@ -63,15 +63,13 @@ function displayWinner(userChoice, computerChoice) {
 do {
   prompt(`Choose one: ${VALID_CHOICES.join(', ')}`);
   prompt("Note: shorthand is 'r', 'p', 'sc', 'l', and 'sp' respectively");
-  let userChoice = userInput();
-  userChoice = shortHand(userChoice);
+  let userChoice = shortHand(userInput());
 
   while (!VALID_CHOICES.includes(userChoice)) {
     console.clear();
     prompt(`That's not a valid choice. Valid choices are: ${VALID_CHOICES.join(', ')}`);
 
-    userChoice = userInput(shortHand);
-    userChoice = shortHand(userChoice);
+    userChoice = shortHand(userInput());
   }
 
   let randomIndex = Math.floor(Math.random() * VALID_CHOICES.length);
